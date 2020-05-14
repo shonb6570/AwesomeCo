@@ -1,0 +1,46 @@
+@import 'normalize';
+@import 'variables';
+@import 'mixins';
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    height: 10vh;
+}
+
+header p {
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+#employees-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    border: solid 1px black;
+    padding: 20px 5px 50px;
+}
+
+.employee-card {
+    width: 28vw;
+    height: 15vh;
+    border: solid 1px;
+    border-color: $border-color-light;
+    padding: 5px;
+    margin: 5px auto;
+}
+
+footer {
+    height: 50px;
+    padding-top: 20px;
+}
+
+footer p {
+    padding-left: 15px;
+}
