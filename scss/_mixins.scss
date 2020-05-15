@@ -1,30 +1,16 @@
 //Media queries
 
-// Breakpoint variables
-$breakpoint-small: 600px;
-$breakpoint-med-small: 960px;
-$breakpoint-med: 1175px;
-
-@mixin screen($size, $type: max, $pixels: $breakpoint-small) {
-  @if $size == 'small' {
-    @media screen and ($type + -width: $breakpoint-small) {
-        @content;
-    }
-  }
-  @else if $size == 'med-small' {
-    @media screen and ($type + -width: $breakpoint-med-small) {
-        @content;
-    }
-  }
-  @else if $size == 'med' {
-    @media screen and ($type + -width: $breakpoint-med) {
-        @content;
-    }
-  }
- @else if $size == 'large' {
-    @media screen and ($type + -width: $breakpoint-med) {
-        @content;
-    }
+@mixin for-size($size) {
+  @if $size == phone-only {
+    @media (max-width: 599px) { @content; }
+  } @else if $size == tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+  } @else if $size == tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+  } @else if $size == desktop-up {
+    @media (min-width: 1200px) { @content; }
+  } @else if $size == big-desktop-up {
+    @media (min-width: 1800px) { @content; }
   }
 }
 

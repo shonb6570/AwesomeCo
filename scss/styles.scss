@@ -1,6 +1,7 @@
 @import 'normalize';
 @import 'variables';
 @import 'mixins';
+@import 'typography';
 
 #wrapper {
     display: flex;
@@ -11,11 +12,12 @@
 
 header {
     height: 10vh;
+    margin: 0 12%;
 }
 
 header p {
-    padding-left: 20px;
     padding-top: 20px;
+    font-size: 26px;
 }
 
 #employees-container {
@@ -23,33 +25,43 @@ header p {
     height: 100%;
     width: 90%;
     margin: auto;
-    border: solid 1px black;
 }
 
 #employees {
     display: flex;
     flex-direction: row;
-    align-content: center;
+    justify-content: center;
     flex-wrap: wrap;
+    padding: 0;
 }
 
-.employee-card {
+li.employee-card {
     display: flex;
     flex-direction: row;
+    height: 150px;
     width: 80%;
-    height: 6%;
     border: solid 1px;
     border-color: $border-color-light;
     border-radius: 5px;
-    padding: 10px;
-    margin: 5px;
+    padding: 30px 20px 0;
+    margin: 10px 0;
     list-style-type: none;
+
+    @include for-size(tablet-landscape-up) {
+        width: 35%;
+        margin: 10px 10px;
+    }
+
+    @include for-size(desktop-up) {
+        width: 25%;
+        margin: 10px 20px;
+    }
 }
 
 .employee-card img {
     border-radius: 50%;
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
 }
 
 #employee-info {
@@ -60,22 +72,27 @@ header p {
 }
 
 .employee-info h3 {
-    padding-left: 10px;
-    margin: 10px 0 10px 0;
-
+    padding-left: 20px;
+    margin: 20px 0 10px 0;
+    color: $font-main-color;
+    font-size: 17px;
 }
 
 .employee-info p {
-    padding: 0 0 5px 10px;
+    padding: 0 0 5px 20px;
+    font-size: 16px;
     margin: 0;
-
+    color: $font-secondary-color;
+    @include for-size(tablet-landscape-up) {
+        font-size: 14px;
+    }
 }
 
 footer {
-    height: 50px;
-    padding-top: 20px;
+    height: 30px;
+    margin: 0 12%;
 }
 
 footer p {
-    padding-left: 15px;
+    padding-bottom: 30px;
 }
