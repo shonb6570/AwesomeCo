@@ -386,8 +386,21 @@ header p {
   width: 100px;
 }
 
-.employee-card p {
-  margin-left: 10px;
+#employee-info {
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+  width: 50px;
+}
+
+.employee-info h3 {
+  padding-left: 10px;
+  margin: 10px 0 10px 0;
+}
+
+.employee-info p {
+  padding: 0 0 5px 10px;
+  margin: 0;
 }
 
 footer {
