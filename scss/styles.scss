@@ -19,21 +19,41 @@ header p {
 }
 
 #employees-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+
+    height: 100%;
+    width: 90%;
     margin: auto;
     border: solid 1px black;
-    padding: 20px 5px 50px;
+}
+
+#employees {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
 }
 
 .employee-card {
-    width: 28vw;
-    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 6%;
     border: solid 1px;
     border-color: $border-color-light;
-    padding: 5px;
-    margin: 5px auto;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    list-style-type: none;
+}
+
+.employee-card img {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.employee-card p {
+    margin-left: 10px;
 }
 
 footer {
