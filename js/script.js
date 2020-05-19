@@ -33,14 +33,10 @@ function fetchInfo(url){
             let email = createUser('p');
             let location = createUser('p');
 
-            let phone = createUser('p');
-            let address = createUser('p');
-            let birthDate = createUser('p');
 
             //create container for name, email, location
             //create container for Modal Info (set to display hidden)
             let employeeInfo = createUser('div');
-            let modalInfo = createUser('div');
 
             //set image data
             img.src = employee.picture.medium;
@@ -50,9 +46,7 @@ function fetchInfo(url){
             name.innerHTML = `${employee.name.first} ${employee.name.last}`;
             email.innerHTML = `${employee.email}`;
             location.innerHTML = `${employee.location.city}`;
-            phone.innerHTML = `${employee.phone}`;
-            address.innerHTML = `${employee.location.street.number} ${employee.location.street.name}${employee.location.state} ${employee.location.postcode}`;
-            birthDate.innerHTML = `${employee.dob.date}`;
+
 
             //append photo to new list item
             li.appendChild(img);
@@ -62,19 +56,48 @@ function fetchInfo(url){
             employeeInfo.appendChild(name);
             employeeInfo.appendChild(email);
             employeeInfo.appendChild(location);
-            modalInfo.appendChild(phone);
-            modalInfo.appendChild(address);
-            modalInfo.appendChild(birthDate);
 
             //append the li to the page
             employees.appendChild(li);
             li.appendChild(employeeInfo);
-            li.appendChild(modalInfo);
+   
             
             //add class to set styling
             li.classList.add("employee-card");
             employeeInfo.classList.add("employee-info");
-            modalInfo.classList.add("modal-info");
+
+
+            function showModal(e) {
+                modal.style.display = "block";
+                modal.innerHTML = `
+                <div class="modal-container">
+                    <div class="modal-content">
+                    <span id="close-button">&times;</span>
+                        <img class="modal-img" src="${employee.picture.large}" alt="${employee.name.first}'s profile picture">
+                        <h3 id="name" class="modal-name cap">${employee.name.first} ${employee.name.last}</h3>
+                        <p class="modal-text">${employee.email}</p>
+                        <p class="modal-text cap">${employee.location.city}</p><hr>
+                        <p class="modal-text">${employee.phone}</p>
+                        <p class="modal-text cap">${employee.location.street.number} ${employee.location.street.name}, ${employee.location.state} ${employee.location.postcode}</p>
+                        <p class="modal-text">Birthday: ${employee.dob.date}</p>
+                    </div>
+                </div>
+                `;
+
+                modalContainer.style.display = 'block';
+
+                modal.classList.add("modal-content")
+              }
+              let employeeCards = document.querySelectorAll(".employee-card")
+              for (let i = 0; i < employeeCards.length; i++) {
+                employeeCards[i].addEventListener('click', showModal);
+              }
+              window.onclick = function(e){
+                if(e.target === modal){
+                  modal.style.display = "none";
+                } 
+              }
+              
         })
     })
     .catch(function (error) {
@@ -88,23 +111,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-//Modal script
-
-function showModal(e){
-      modal.style.display = "block";
-      modal.innerHTML = this.innerHTML;
-  }
-
-document.querySelectorAll(".employee-card").addEventListener('click', showModal);
-
-closeButton.onclick = function(){
-  modal.style.display = "none";
+document.onclick = function(e){
+    if(e.target.id === "close-button"){
+      modal.style.display = "none";
+    } 
 }
-window.onclick = function(e){
-  if(e.target === modal){
-    modal.style.display = "none";
-  }
-}
+
+
 
 
 
