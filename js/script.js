@@ -25,7 +25,7 @@ function fetchInfo(url){
     .then((response) => (response.json()))
     .then(function (data) {
         console.log(data);
-        data.results.forEach(employee => {
+        data.results.forEach((employee, index) => {
             //create html elements for API employee data  
             let li = createUser('li');
             let img = createUser('img');
@@ -89,9 +89,7 @@ function fetchInfo(url){
                 modal.classList.add("modal-content")
               }
               let employeeCards = document.querySelectorAll(".employee-card")
-              for (let i = 0; i < employeeCards.length; i++) {
-                employeeCards[i].addEventListener('click', showModal);
-              }
+              employeeCards[index].addEventListener('click', showModal);
               window.onclick = function(e){
                 if(e.target === modal){
                   modal.style.display = "none";
