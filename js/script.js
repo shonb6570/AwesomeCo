@@ -103,7 +103,10 @@ function fetchInfo(url){
 
 
 
-            // Arrow function to scroll to previous/next employee
+            //Arrow function to scroll to previous/next employee
+
+            //This works.  It pull the last employee data from the loop (because the loop is finished).  However, if I try to add brackets and an iteration value
+            //to the placeholders (ie, ${employee[1]...}), it says undefined.   I am not sure why this does not work, or how to target other user data...
 
             function scrollPreviousUser(data) {
                 const dob = new Date(Date.parse(employee.dob.date)).toLocaleDateString(navigator.language);
@@ -126,11 +129,11 @@ function fetchInfo(url){
             }
 
             function scrollNextUser() {
-                console.log(data.results[1].picture.large);
-                console.log(employee, 0);
-                console.log(index);
-                console.log(modalImg.innerHTML);
-                modalImg.innerHTML = data.results[1].picture.large;
+                console.log(data.results[1].picture.large); //this a test to see if I can pull other user data - it logs successfully
+                console.log(employee, 0);  //another test - works
+                console.log(index); //also, works fine
+                console.log(modalImg.innerHTML);  // FAILS MISIERABLY lol - And i dont know why.  Why does this not  work?  the information is  logging, but cannot be set to an new element.
+                modalImg.innerHTML = data.results[1].picture.large;  //also fails...   why?
             }
 
 
@@ -142,11 +145,6 @@ function fetchInfo(url){
                     scrollPreviousUser();
                 }
             }
-
-
-
-
-
 
               //click function to close modal by clicking outside of modal div or close button
               window.onclick = function(e){
@@ -166,6 +164,7 @@ function fetchInfo(url){
 document.addEventListener('DOMContentLoaded', () => {
     fetchInfo(url);
 });
+
 
 
 
