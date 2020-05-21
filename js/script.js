@@ -11,7 +11,7 @@
     const modalContent = document.querySelectorAll("li");
     const modal = document.getElementById("modal-container");
     const closeButton = document.querySelector(".close-button");
-    const modalImg = document.getElementById("modal-img");
+    
 
 
 // Fetch functions
@@ -128,13 +128,9 @@ function fetchInfo(url){
                 </div>
                 `;
             }
+            const modalImg = document.getElementById("modal-img");
 
             function scrollNextUser() {
-                console.log(data.results[1].picture.large); //this a test to see if I can pull other user data - it logs successfully
-                console.log(employee, 0);  //another test - works
-                console.log(index); //also, works fine
-                console.log(modalImg.innerHTML);  // FAILS MISIERABLY lol - And i dont know why.  Why does this not  work?  the information is  logging, but cannot be set to an new element.
-                modalImg.innerHTML = data.results[1].picture.large;  //also fails...   why?
             }
 
 
