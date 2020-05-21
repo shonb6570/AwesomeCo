@@ -11,6 +11,7 @@
     const modalContent = document.querySelectorAll("li");
     const modal = document.getElementById("modal-container");
     const closeButton = document.querySelector(".close-button");
+    const modalImg = document.getElementById("modal-img");
 
 
 // Fetch functions
@@ -69,17 +70,20 @@ function fetchInfo(url){
 
             function showModal(e) {
                 modal.style.display = "block";
+                const dob = new Date(Date.parse(employee.dob.date)).toLocaleDateString(navigator.language);
                 modal.innerHTML = `
                 <div class="modal-container">
-                    <div class="modal-content">
+                    <div class="modal-content" data-index="${index}">
                     <span id="close-button">&times;</span>
+                        <button class="arrowButton left">&lsaquo;</button>
                         <img class="modal-img" src="${employee.picture.large}" alt="${employee.name.first}'s profile picture">
                         <h3 id="name" class="modal-name cap">${employee.name.first} ${employee.name.last}</h3>
                         <p class="modal-text">${employee.email}</p>
                         <p class="modal-text cap">${employee.location.city}</p><hr>
                         <p class="modal-text">${employee.phone}</p>
                         <p class="modal-text cap">${employee.location.street.number} ${employee.location.street.name}, ${employee.location.state} ${employee.location.postcode}</p>
-                        <p class="modal-text">Birthday: ${employee.dob.date}</p>
+                        <p class="modal-text">Birthday: ${dob}</p>
+                        <button class="arrowButton right">&rsaquo;</button>
                     </div>
                 </div>
                 `;
@@ -88,10 +92,65 @@ function fetchInfo(url){
 
                 modal.classList.add("modal-content")
               }
+
               let employeeCards = document.querySelectorAll(".employee-card")
+
               employeeCards[index].addEventListener('click', showModal);
+
+
+
+
+
+
+
+            // Arrow function to scroll to previous/next employee
+
+            function scrollPreviousUser(data) {
+                const dob = new Date(Date.parse(employee.dob.date)).toLocaleDateString(navigator.language);
+                modal.innerHTML = `
+                <div class="modal-container">
+                    <div class="modal-content">
+                    <span id="close-button">&times;</span>
+                        <button class="arrowButton left">&lsaquo;</button>
+                        <img class="modal-img" src="${employee.picture.large}" alt="${employee.name.first}'s profile picture">
+                        <h3 id="name" class="modal-name cap">${employee.name.first} ${employee.name.last}</h3>
+                        <p class="modal-text">${employee.email}</p>
+                        <p class="modal-text cap">${employee.location.city}</p><hr>
+                        <p class="modal-text">${employee.phone}</p>
+                        <p class="modal-text cap">${employee.location.street.number} ${employee.location.street.name}, ${employee.location.state} ${employee.location.postcode}</p>
+                        <p class="modal-text">Birthday: ${dob}</p>
+                        <button class="arrowButton right">&rsaquo;</button>
+                    </div>
+                </div>
+                `;
+            }
+
+            function scrollNextUser() {
+                console.log(data.results[1].picture.large);
+                console.log(employee, 0);
+                console.log(index);
+                console.log(modalImg.innerHTML);
+                modalImg.innerHTML = data.results[1].picture.large;
+            }
+
+
+            //Arrow employee scroll - click function listener
+            document.onclick = function arrowClick(e){
+                if(e.target.className === "arrowButton right"){
+                    scrollNextUser();
+                } else if (e.target.className === "arrowButton left"){
+                    scrollPreviousUser();
+                }
+            }
+
+
+
+
+
+
+              //click function to close modal by clicking outside of modal div or close button
               window.onclick = function(e){
-                if(e.target === modal){
+                if(e.target === modal || e.target.id === "close-button"){
                   modal.style.display = "none";
                 } 
               }
@@ -109,11 +168,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.onclick = function(e){
-    if(e.target.id === "close-button"){
-      modal.style.display = "none";
-    } 
-}
+
+
 
 
 

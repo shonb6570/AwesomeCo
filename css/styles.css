@@ -409,23 +409,23 @@ li.employee-card {
   padding-left: 20px;
   margin: 20px 0 10px 0;
   color: #4d4c4c;
-  font-size: 17px;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .employee-info p {
   padding: 0 0 5px 20px;
-  font-size: 16px;
   margin: 0;
   color: #8a8a8a;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
 }
 @media (min-width: 900px) {
   .employee-info p {
-    font-size: 14px;
+    font-size: 16px;
   }
-}
-
-.modal-info {
-  display: none;
 }
 
 footer {
@@ -435,6 +435,13 @@ footer {
 
 footer p {
   padding-bottom: 30px;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.modal-info {
+  display: none;
 }
 
 #modal-container {
@@ -451,6 +458,7 @@ footer p {
 .modal-content {
   position: relative;
   top: 10vh;
+  text-align: center;
   background: white;
   border: 1px solid rgba(100, 100, 100, 0.3);
   border-radius: 0.25em;
@@ -458,6 +466,7 @@ footer p {
   margin: auto;
   width: 30%;
   min-width: 300px;
+  max-width: 400px;
   height: 50vh;
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
@@ -484,6 +493,25 @@ footer p {
   width: 75%;
   margin: 25px auto 30px;
   border-color: rgba(200, 200, 200, 0.2);
+}
+
+.arrowButton {
+  border: none;
+  font-size: 40px;
+}
+
+.left {
+  float: left;
+  position: absolute;
+  top: 45%;
+  left: 3%;
+}
+
+.right {
+  float: right;
+  position: absolute;
+  top: 45%;
+  right: 3%;
 }
 
 #close-button {
