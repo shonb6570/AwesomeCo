@@ -88,8 +88,6 @@ function fetchInfo(url){
                 </div>
                 `;
 
-                modalContainer.style.display = 'block';
-
                 modal.classList.add("modal-content")
               }
 
