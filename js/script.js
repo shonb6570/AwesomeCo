@@ -107,6 +107,9 @@ function fetchInfo(url){
 
             //This works.  It pull the last employee data from the loop (because the loop is finished).  However, if I try to add brackets and an iteration value
             //to the placeholders (ie, ${employee[1]...}), it says undefined.   I am not sure why this does not work, or how to target other user data...
+            // I set a data-index attribute to the showModal function content div above.  The next step would be to use that number as the basis for the 
+            //next/previous user data - i.e., set a click function to get the data-index atteribute.  Then do that nubmer plus one for the next user's info.
+            //However, I am unable to get that step at the moment, being that I cannot seem to target the data correctly.
 
             function scrollPreviousUser(data) {
                 const dob = new Date(Date.parse(employee.dob.date)).toLocaleDateString(navigator.language);
