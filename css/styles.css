@@ -460,7 +460,7 @@ footer p {
   top: 10vh;
   text-align: center;
   background: white;
-  border: 1px solid rgba(100, 100, 100, 0.3);
+  border: 2px solid rgba(100, 100, 100, 0.3);
   border-radius: 0.25em;
   padding: 20px;
   margin: auto;
@@ -468,10 +468,8 @@ footer p {
   min-width: 300px;
   max-width: 400px;
   height: 50vh;
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.4s;
+  animation: flip 0.5s;
+  transform-style: preserve-3d;
 }
 
 .modal-img {
@@ -489,8 +487,8 @@ footer p {
   margin: 10px;
 }
 
-.modal hr {
-  width: 75%;
+hr {
+  width: 65%;
   margin: 25px auto 30px;
   border-color: rgba(200, 200, 200, 0.2);
 }
@@ -525,23 +523,15 @@ footer p {
   color: darkgray;
 }
 
-@-webkit-keyframes animatetop {
-  from {
-    top: -300px;
+@keyframes flip {
+  0% {
+    perspective: 1300px;
+    transform: rotateY(-120deg);
+    transition: all 0.3s;
     opacity: 0;
   }
-  to {
-    top: 100px;
-    opacity: 1;
-  }
-}
-@keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0;
-  }
-  to {
-    top: 100px;
+  100% {
+    transform: rotateY(0deg);
     opacity: 1;
   }
 }
