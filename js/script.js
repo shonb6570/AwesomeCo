@@ -95,7 +95,7 @@ function showModal(employees, employee, index) {
   modal.classList.add("modal-content");
 
   function scrollPreviousUser() {
-    showModal(employees, employees[index - 1], index - 1);
+    showModal(employees, employees[index - 1], index - 1)
   }
 
   function scrollNextUser() {
@@ -103,11 +103,23 @@ function showModal(employees, employee, index) {
   }
 
   //Arrow employee scroll - click function listener
+  //if the arrow is left arrow is clicked on the first employee the index 
+  //counter falls below 1, then it is reset to the last employee
+  //and vice-versa for the last employee (index is reset to the first employee) 
   document.onclick = function arrowClick(e) {
     if (e.target.className === "arrowButton right") {
-      scrollNextUser();
+      console.log(index);
+      if(index > 10){
+        showModal(employees, employees[index - 11], index - 11);
+      } else{
+        scrollNextUser();
+      }
     } else if (e.target.className === "arrowButton left") {
-      scrollPreviousUser();
+      if(index < 1){
+        showModal(employees, employees[index + 11], index + 11);
+      } else{
+        scrollPreviousUser();
+      }
     }
   };
 

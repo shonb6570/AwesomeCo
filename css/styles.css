@@ -469,7 +469,6 @@ footer p {
   max-width: 400px;
   height: 50vh;
   animation: flip 0.5s;
-  transform-style: preserve-3d;
 }
 
 .modal-img {
