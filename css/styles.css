@@ -342,6 +342,80 @@ footer p {
   color: #8a8a8a;
 }
 
+/* ============================================= */
+/*          SVG Keyframes                        */
+/* ============================================= */
+@keyframes offset {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes mobile-path-fill {
+  100% {
+    fill: #3B3B3B;
+  }
+}
+@keyframes fill-desktop {
+  100% {
+    fill: #fffb0f;
+  }
+}
+@keyframes move-left {
+  100% {
+    margin-right: 52%;
+  }
+}
+/* ============================================= */
+/*          Main logo                            */
+/* ============================================= */
+#logo {
+  padding-top: 15px;
+  height: 150px;
+  width: 350px;
+}
+@media (min-width: 1199px) {
+  #logo {
+    margin-right: 0 auto;
+    transition: all 2s ease-out;
+  }
+}
+@media (min-width: 1200px) {
+  #logo {
+    animation: move-left 2s forwards;
+    padding-top: 20px;
+    height: 120px;
+    width: 300px;
+  }
+}
+@media (min-width: 1400px) {
+  #logo {
+    width: 350px;
+  }
+}
+@media (min-width: 1800px) {
+  #logo {
+    width: 400px;
+  }
+}
+
+#logoFill {
+  fill: #D00005;
+  stroke: #D00005;
+}
+@media (min-width: 1200px) {
+  #logoFill {
+    animation: fill-desktop 1.5s 1.2s forwards;
+  }
+}
+
+.logo-stroke {
+  stroke: #3B3B3B;
+  stroke-width: 1;
+  stroke-dasharray: 325;
+  stroke-dashoffset: 325;
+  animation: offset 3s linear forwards, mobile-path-fill 1.2s 3s forwards;
+}
+
 #wrapper {
   display: flex;
   flex-direction: column;
@@ -353,12 +427,6 @@ header {
   display: flex;
   justify-content: center;
   text-align: center;
-}
-
-#logo {
-  padding-top: 15px;
-  height: 150px;
-  width: 350px;
 }
 
 #employees-container {

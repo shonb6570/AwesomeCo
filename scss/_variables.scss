@@ -5,12 +5,15 @@
 
 //  Descriptive colors    //
 
-$tundora:          #4d4c4c;
-$white:             #FFF;
-$gallery:           #ECECEC;
-$wild-dove:         #8a8a8a;
-$nobel:             rgb(183, 183, 183);
-$mine-shaft:        rgba(59, 59, 59, .65);
+$tundora:              #4d4c4c;
+$broom:                #fffb0f;
+$white:                #FFF;
+$gallery:              #ECECEC;
+$wild-dove:            #8a8a8a;
+$nobel:                rgb(183, 183, 183);
+$mine-shaft-opaque:    rgba(59, 59, 59, .65);
+$mine-shaft:           #3B3B3B;
+$guardsman-red:        #D00005;
 
 
 // Base style colors //
@@ -22,28 +25,13 @@ $font-main-color:         $tundora;
 $font-secondary-color:    $wild-dove; 
 
     //logo
-// $company-logo:         $melrose;
-// $company-logo-hover:   $Anakiwa;
+$logo-main-path-color:         $mine-shaft;
+$logo-alternate-path-color:    $broom;
+$logo-main-fill:               $guardsman-red;
+$company-logo-hover:           blue;
 
     //border
 $border-color-light:      $nobel;
-
-//     //button
-// $button-hover:         $de-york;
-// $icon-non-active:      $spun-pearl;
-// $icon-hover:           $gallery;
-// $link-hover:           $spindle;
-
-//     //nav and alert banner
-// $nav-color:            $mulled-wine;
-// $banner-color:         $wistful;
-// $alert-bell-unread:    $de-york;
-
-//     //checkbox sliders
-// $slider-on:            $de-york;
-// $slider-off:           $mulled-wine;
-
-
 
 // // Font Stacks //
 

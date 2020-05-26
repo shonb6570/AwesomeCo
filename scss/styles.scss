@@ -2,6 +2,7 @@
 @import 'variables';
 @import 'mixins';
 @import 'typography';
+@import 'logo';
 
 #wrapper {
     display: flex;
@@ -14,12 +15,6 @@ header {
     display: flex;
     justify-content: center;
     text-align: center;
-}
-
-#logo {
-    padding-top: 15px;
-    height: 150px;
-    width: 350px;
 }
 
 

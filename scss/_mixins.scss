@@ -7,8 +7,12 @@
     @media (min-width: 600px) { @content; }
   } @else if $size == tablet-landscape-up {
     @media (min-width: 900px) { @content; }
+  } @else if $size == desktop-smaller-up {
+    @media (min-width: 1199px) { @content; }
   } @else if $size == desktop-up {
     @media (min-width: 1200px) { @content; }
+  } @else if $size == larger-desktop-up {
+    @media (min-width: 1400px) { @content; }
   } @else if $size == big-desktop-up {
     @media (min-width: 1800px) { @content; }
   }

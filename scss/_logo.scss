@@ -1,0 +1,88 @@
+// ==========================================================================
+// SVG styles
+// ==========================================================================
+
+
+
+/* ============================================= */
+/*          SVG Keyframes                        */
+/* ============================================= */
+
+@keyframes offset {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes mobile-path-fill {
+    100% {
+        fill: $logo-main-path-color;
+    }
+}
+
+
+@keyframes fill-desktop {
+    100% {
+        fill: $logo-alternate-path-color;
+    }
+}
+
+@keyframes move-left {
+    100% {
+        margin-right: 52%;
+    }
+}
+
+/* ============================================= */
+/*          Main logo                            */
+/* ============================================= */
+
+
+#logo {
+    padding-top: 15px;
+    height: 150px;
+    width: 350px;
+    
+    @include for-size(desktop-smaller-up) {
+        margin-right: 0 auto;
+        transition: all 2s ease-out;
+    }
+
+    @include for-size(desktop-up) {
+        animation: move-left 2s forwards;
+        padding-top: 20px;
+        height: 120px;
+        width: 300px;
+    }
+
+    @include for-size(larger-desktop-up) {
+        width: 350px;
+    }
+
+    @include for-size(big-desktop-up) {
+        width: 400px;
+    }
+}
+
+#logo:hover {
+    
+}
+
+#logoFill {
+    fill: $logo-main-fill;
+    stroke: $logo-main-fill;
+
+    @include for-size(desktop-up) {
+        animation: fill-desktop 1.5s 1.2s forwards;
+    }
+}
+
+.logo-stroke {
+    stroke: $logo-main-path-color;
+    stroke-width: 1;
+    stroke-dasharray: 325;
+    stroke-dashoffset: 325;
+    animation: offset 3s linear forwards, mobile-path-fill 1.2s 3s forwards;
+}
+
+
