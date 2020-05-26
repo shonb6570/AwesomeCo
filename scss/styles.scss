@@ -11,14 +11,17 @@
 }
 
 header {
-    height: 10vh;
-    margin: 0 12%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
-header p {
-    padding-top: 20px;
-    font-size: 26px;
+#logo {
+    padding-top: 15px;
+    height: 150px;
+    width: 350px;
 }
+
 
 #employees-container {
 
