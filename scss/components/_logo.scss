@@ -60,13 +60,11 @@
     }
 
     @media (max-width: 1200px) {
-        #logo {
           animation: move-right 2s forwards;
           padding-top: 20px;
           height: 120px;
           width: 300px;
           transition: width 1s;
-        }
       }
 
     @include for-size(larger-desktop-up) {
