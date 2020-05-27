@@ -1,5 +1,5 @@
 // ==========================================================================
-// SVG styles
+// Logo styles
 // ==========================================================================
 
 
@@ -23,7 +23,7 @@
 
 @keyframes fill-desktop {
     100% {
-        fill: $logo-alternate-path-color;
+        fill: $logo-alternate-fill;
     }
 }
 
@@ -34,7 +34,7 @@
 }
 
 /* ============================================= */
-/*          Main logo                            */
+/*          Main logo SVG styles                 */
 /* ============================================= */
 
 
@@ -62,9 +62,6 @@
     }
 }
 
-#logo:hover {
-    
-}
 
 #logoFill {
     fill: $logo-main-fill;
@@ -72,6 +69,7 @@
 
     @include for-size(desktop-up) {
         animation: fill-desktop 1.5s 1.2s forwards;
+
     }
 }
 

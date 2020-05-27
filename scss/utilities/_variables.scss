@@ -1,0 +1,72 @@
+// ==========================================================================
+// Variables
+// ==========================================================================
+
+
+/* ============================================= */
+/*         Descriptive colors                    */
+/* ============================================= */
+
+$tundora:                 #4d4c4c;
+$broom:                   #fffb0f;
+$wild-dove:               #8a8a8a;
+$nobel:                   rgb(183, 183, 183);
+$mine-shaft-opaque:       rgba(59, 59, 59, .65);
+$mine-shaft:              #3B3B3B;
+$guardsman-red:           #D00005;
+$blue-stone:              rgba(0, 88, 99, 0.502);
+$gallery:                 #EAEAEA;
+$pale-white:              rgba(255, 255, 255, 0.6);
+$white:                   rgb(255, 255, 255);
+$dove-gray:               rgba(100, 100, 100, 0.3);
+$pale-black:              rgba(0, 0, 0, 0.7);
+$silver:                  rgba(200, 200, 200);
+$very-pale-silver:        rgba(200, 200, 200, 0.2);
+$silver-chalice:          #A9A9A9;
+
+/* ============================================= */
+/*         Base style colors                     */
+/* ============================================= */
+
+    //html base color
+$page-base-color:         $gallery;
+
+    //logo
+$logo-main-path-color:    $mine-shaft;
+$logo-main-fill:          $guardsman-red;
+$logo-alternate-fill:     $broom;
+
+    //border
+$border-color-light:      $nobel;
+
+    //hover
+$hover-glow:              $blue-stone;
+$hover-background:        $pale-white;
+
+    //font
+$font-main-color:         $tundora;
+$font-secondary-color:    $wild-dove; 
+$font-modal:              $mine-shaft-opaque;
+
+    //modal
+$modal-card-background:   $white;
+$modal-border:            $dove-gray;
+$modal-overlay:           $pale-black;
+$modal-hr:                $very-pale-silver;
+$close-button:            $silver;
+$close-button-hover:      $silver-chalice;
+
+
+/* ============================================= */
+/*         Font stacks                           */
+/* ============================================= */
+
+$main-font:               'Open Sans Condensed', sans-serif;
+
+
+/* ============================================= */
+/*         Font weights                          */
+/* ============================================= */
+
+$font-light:               300;
+$font-bold:                700;    

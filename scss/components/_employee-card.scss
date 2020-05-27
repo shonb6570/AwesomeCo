@@ -1,0 +1,51 @@
+
+
+#employees-container {
+
+    height: 100%;
+    width: 90%;
+    margin: auto;
+}
+
+#employees {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+li.employee-card {
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    width: 80%;
+    border: solid 1px;
+    border-color: $border-color-light;
+    border-radius: 5px;
+    padding: 30px 20px 0;
+    margin: 10px 0;
+    list-style-type: none;
+
+    @include for-size(tablet-landscape-up) {
+        width: 35%;
+        margin: 10px 10px;
+    }
+
+    @include for-size(desktop-up) {
+        width: 25%;
+        margin: 18px 18px;
+    }
+}
+
+.employee-card img {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+}
+
+.employee-card:hover {
+    box-shadow: 0 0 .6rem $hover-glow;
+    background-color: $hover-background;
+    transition: all 1s ease-out;
+}

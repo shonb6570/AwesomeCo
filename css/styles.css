@@ -1,3 +1,56 @@
+/* ============================================= */
+/*         Descriptive colors                    */
+/* ============================================= */
+/* ============================================= */
+/*         Base style colors                     */
+/* ============================================= */
+/* ============================================= */
+/*         Font stacks                           */
+/* ============================================= */
+/* ============================================= */
+/*         Font weights                          */
+/* ============================================= */
+.employee-info p,
+footer p {
+  color: #8a8a8a;
+}
+
+.employee-info p,
+.employee-info h3,
+footer p {
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+.employee-info p,
+footer p {
+  font-weight: 300;
+}
+
+.employee-info h3 {
+  padding-left: 20px;
+  margin: 20px 0 10px 0;
+  color: #4d4c4c;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.employee-info p {
+  padding: 0 0 5px 20px;
+  margin: 0;
+  color: #8a8a8a;
+  font-size: 18px;
+}
+@media (min-width: 900px) {
+  .employee-info p {
+    font-size: 16px;
+  }
+}
+
+footer p {
+  padding-bottom: 30px;
+  font-size: 16px;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -337,80 +390,8 @@ template {
   display: none;
 }
 
-.employee-info p,
-footer p {
-  color: #8a8a8a;
-}
-
-/* ============================================= */
-/*          SVG Keyframes                        */
-/* ============================================= */
-@keyframes offset {
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes mobile-path-fill {
-  100% {
-    fill: #3B3B3B;
-  }
-}
-@keyframes fill-desktop {
-  100% {
-    fill: #fffb0f;
-  }
-}
-@keyframes move-left {
-  100% {
-    transform: translateX(-118%);
-  }
-}
-/* ============================================= */
-/*          Main logo                            */
-/* ============================================= */
-#logo {
-  padding-top: 15px;
-  height: 150px;
-  width: 350px;
-}
-@media (min-width: 1200px) {
-  #logo {
-    animation: move-left 2s forwards;
-    padding-top: 20px;
-    height: 120px;
-    width: 300px;
-    transition: width 1s;
-  }
-}
-@media (min-width: 1400px) {
-  #logo {
-    width: 350px;
-    transition: width 1s;
-  }
-}
-@media (min-width: 1800px) {
-  #logo {
-    width: 400px;
-    transition: width 1s;
-  }
-}
-
-#logoFill {
-  fill: #D00005;
-  stroke: #D00005;
-}
-@media (min-width: 1200px) {
-  #logoFill {
-    animation: fill-desktop 1.5s 1.2s forwards;
-  }
-}
-
-.logo-stroke {
-  stroke: #3B3B3B;
-  stroke-width: 1;
-  stroke-dasharray: 325;
-  stroke-dashoffset: 325;
-  animation: offset 3s linear forwards, mobile-path-fill 1.2s 3s forwards;
+html {
+  background-color: #EAEAEA;
 }
 
 #wrapper {
@@ -424,6 +405,11 @@ header {
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+footer {
+  height: 30px;
+  margin: 0 12%;
 }
 
 #employees-container {
@@ -471,41 +457,30 @@ li.employee-card {
   width: 120px;
 }
 
-.employee-info h3 {
-  padding-left: 20px;
-  margin: 20px 0 10px 0;
-  color: #4d4c4c;
-  font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 700;
-  font-size: 20px;
+.employee-card:hover {
+  box-shadow: 0 0 0.6rem rgba(0, 88, 99, 0.502);
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: all 1s ease-out;
 }
 
-.employee-info p {
-  padding: 0 0 5px 20px;
-  margin: 0;
-  color: #8a8a8a;
-  font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 300;
-  font-size: 18px;
-}
-@media (min-width: 900px) {
-  .employee-info p {
-    font-size: 16px;
+/* ============================================= */
+/*          Modal Keyframes                      */
+/* ============================================= */
+@keyframes flip {
+  0% {
+    perspective: 1300px;
+    transform: rotateY(-120deg);
+    transition: all 0.3s;
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg);
+    opacity: 1;
   }
 }
-
-footer {
-  height: 30px;
-  margin: 0 12%;
-}
-
-footer p {
-  padding-bottom: 30px;
-  font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-}
-
+/* ============================================= */
+/*          Modal Styles                         */
+/* ============================================= */
 .modal-info {
   display: none;
 }
@@ -548,7 +523,7 @@ footer p {
 }
 
 .modal-text {
-  color: rgba(50, 50, 50, 0.7);
+  color: rgba(59, 59, 59, 0.65);
   margin: 10px;
 }
 
@@ -579,26 +554,84 @@ hr {
 
 #close-button {
   float: right;
-  color: lightgray;
+  color: #c8c8c8;
   font-size: 24px;
   font-weight: bold;
 }
 
 #close-button:hover {
-  color: darkgray;
+  color: #A9A9A9;
 }
 
-@keyframes flip {
-  0% {
-    perspective: 1300px;
-    transform: rotateY(-120deg);
-    transition: all 0.3s;
-    opacity: 0;
-  }
+/* ============================================= */
+/*          SVG Keyframes                        */
+/* ============================================= */
+@keyframes offset {
   100% {
-    transform: rotateY(0deg);
-    opacity: 1;
+    stroke-dashoffset: 0;
   }
+}
+@keyframes mobile-path-fill {
+  100% {
+    fill: #3B3B3B;
+  }
+}
+@keyframes fill-desktop {
+  100% {
+    fill: #fffb0f;
+  }
+}
+@keyframes move-left {
+  100% {
+    transform: translateX(-118%);
+  }
+}
+/* ============================================= */
+/*          Main logo SVG styles                 */
+/* ============================================= */
+#logo {
+  padding-top: 15px;
+  height: 150px;
+  width: 350px;
+}
+@media (min-width: 1200px) {
+  #logo {
+    animation: move-left 2s forwards;
+    padding-top: 20px;
+    height: 120px;
+    width: 300px;
+    transition: width 1s;
+  }
+}
+@media (min-width: 1400px) {
+  #logo {
+    width: 350px;
+    transition: width 1s;
+  }
+}
+@media (min-width: 1800px) {
+  #logo {
+    width: 400px;
+    transition: width 1s;
+  }
+}
+
+#logoFill {
+  fill: #D00005;
+  stroke: #D00005;
+}
+@media (min-width: 1200px) {
+  #logoFill {
+    animation: fill-desktop 1.5s 1.2s forwards;
+  }
+}
+
+.logo-stroke {
+  stroke: #3B3B3B;
+  stroke-width: 1;
+  stroke-dasharray: 325;
+  stroke-dashoffset: 325;
+  animation: offset 3s linear forwards, mobile-path-fill 1.2s 3s forwards;
 }
 
 /*# sourceMappingURL=styles.css.map */

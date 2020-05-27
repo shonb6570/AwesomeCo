@@ -1,0 +1,43 @@
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+
+.employee-info p,
+footer p {
+    color: $font-secondary-color;
+}
+
+.employee-info p,
+.employee-info h3,
+footer p {
+    font-family: $main-font;
+}
+
+.employee-info p,
+footer p {
+    font-weight: $font-light;
+}
+
+.employee-info h3 {
+    padding-left: 20px;
+    margin: 20px 0 10px 0;
+    color: $font-main-color;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.employee-info p {
+    padding: 0 0 5px 20px;
+    margin: 0;
+    color: $font-secondary-color;
+    font-size: 18px;
+    @include for-size(tablet-landscape-up) {
+        font-size: 16px;
+    }
+}
+
+footer p {
+    padding-bottom: 30px;
+    font-size: 16px;
+}

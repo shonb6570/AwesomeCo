@@ -1,8 +1,9 @@
-//"employees" is a <ul> element
+//global variables
+//"employees" var = <ul> element
 const employees = document.getElementById("employees");
 const url = 'https://randomuser.me/api/?results=12&nat=us';
 
-//Modal
+//Modal variables
 const modalContent = document.querySelectorAll("li");
 const modal = document.getElementById("modal-container");
 const closeButton = document.querySelector(".close-button");
@@ -49,7 +50,7 @@ function fetchInfo(url) {
         employees.appendChild(li);
         li.appendChild(employeeInfo);
 
-        //add class to set styling
+        //add class to set css styling
         li.classList.add("employee-card");
         employeeInfo.classList.add("employee-info");
 
@@ -71,6 +72,10 @@ function fetchInfo(url) {
       console.log(error);
     });
 }
+
+//modal function to create html template - employees = API results (total results of 12 objects), 
+//employee = 1 iteration (1 result object)
+//index = iteration index number (or, employee index number)
 
 function showModal(employees, employee, index) {
   modal.style.display = "block";
@@ -94,6 +99,7 @@ function showModal(employees, employee, index) {
 
   modal.classList.add("modal-content");
 
+  //arrow scroll function - resets data results index by +1 or -1 depending on next/previous employee
   function scrollPreviousUser() {
     showModal(employees, employees[index - 1], index - 1)
   }

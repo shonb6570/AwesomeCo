@@ -1,0 +1,26 @@
+// ==========================================================================
+// Base styles
+// ==========================================================================
+
+html {
+    background-color: $page-base-color;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+footer {
+    height: 30px;
+    margin: 0 12%;
+}
