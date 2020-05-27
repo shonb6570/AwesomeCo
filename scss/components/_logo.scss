@@ -33,6 +33,14 @@
     }
 }
 
+@keyframes move-right {
+    from {
+      transform: translateX(-118%);
+    } to {
+      transform: translateX(0);
+    }
+  }
+
 /* ============================================= */
 /*          Main logo SVG styles                 */
 /* ============================================= */
@@ -51,6 +59,16 @@
         transition: width 1s;
     }
 
+    @media (max-width: 1200px) {
+        #logo {
+          animation: move-right 2s forwards;
+          padding-top: 20px;
+          height: 120px;
+          width: 300px;
+          transition: width 1s;
+        }
+      }
+
     @include for-size(larger-desktop-up) {
         width: 350px;
         transition: width 1s;
@@ -60,7 +78,9 @@
         width: 400px;
         transition: width 1s;
     }
+
 }
+
 
 
 #logoFill {
