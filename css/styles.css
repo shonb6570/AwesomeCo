@@ -362,7 +362,7 @@ footer p {
 }
 @keyframes move-left {
   100% {
-    margin-right: 52%;
+    transform: translateX(-118%);
   }
 }
 /* ============================================= */
@@ -373,28 +373,25 @@ footer p {
   height: 150px;
   width: 350px;
 }
-@media (min-width: 1199px) {
-  #logo {
-    margin-right: 0 auto;
-    transition: all 2s ease-out;
-  }
-}
 @media (min-width: 1200px) {
   #logo {
     animation: move-left 2s forwards;
     padding-top: 20px;
     height: 120px;
     width: 300px;
+    transition: width 1s;
   }
 }
 @media (min-width: 1400px) {
   #logo {
     width: 350px;
+    transition: width 1s;
   }
 }
 @media (min-width: 1800px) {
   #logo {
     width: 400px;
+    transition: width 1s;
   }
 }
 

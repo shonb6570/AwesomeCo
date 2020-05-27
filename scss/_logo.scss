@@ -29,7 +29,7 @@
 
 @keyframes move-left {
     100% {
-        margin-right: 52%;
+        transform: translateX(-118%);
     }
 }
 
@@ -41,26 +41,24 @@
 #logo {
     padding-top: 15px;
     height: 150px;
-    width: 350px;
-    
-    @include for-size(desktop-smaller-up) {
-        margin-right: 0 auto;
-        transition: all 2s ease-out;
-    }
+    width: 350px; 
 
     @include for-size(desktop-up) {
         animation: move-left 2s forwards;
         padding-top: 20px;
         height: 120px;
         width: 300px;
+        transition: width 1s;
     }
 
     @include for-size(larger-desktop-up) {
         width: 350px;
+        transition: width 1s;
     }
 
     @include for-size(big-desktop-up) {
         width: 400px;
+        transition: width 1s;
     }
 }
 
